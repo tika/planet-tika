@@ -1,5 +1,6 @@
 import { Avatar } from "@/components/avatar";
 import { TextLink } from "@/components/link";
+import { ProjectPreview } from "@/components/project-preview";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -91,6 +92,16 @@ export default async function Home() {
       <div className="flex items-center gap-6">
         <Avatar />
         <div>
+          {/* <div className="absolute top-30 left-0 w-full h-full -z-10">
+            <div className="w-full h-96 relative rounded-3xl overflow-none ">
+              <div
+                className={`b bg-[linear-gradient(30deg, red, transparent),
+      url(https://grainy-gradients.vercel.app/noise.svg)] rounded-full z-10 bg-black`}
+              ></div>
+              <div className="absolute top-0 w-full h-full bg-blue-500 mix-blend-multiply rounded-full blur-3xl"></div>
+            </div>
+          </div> */}
+
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
             Tika Capon
           </h1>
@@ -101,14 +112,15 @@ export default async function Home() {
       </div>
       <hr className="my-8" />
       <div>
-        <div>
+        <h1 className="text-3xl mb-4">Projects</h1>
+        <div className="flex flex-col lg:grid lg:grid-cols-5 gap-4">
           {content.map((it, i) => (
-            <p key={i}>{it}</p>
+            <ProjectPreview key={i} parts={it.split("\n")} />
           ))}
         </div>
       </div>
       <div className="bg-muted rounded-3xl py-8 px-6 text-muted-foreground mt-8">
-        <p className="text-white text-lg mb-4">Quick links</p>
+        <p className="text-primary text-lg mb-4">Quick links</p>
         <TextLink url="https://github.com/tika">GitHub (@tika)</TextLink>
       </div>
     </main>
