@@ -1,9 +1,19 @@
 import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Syne } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["500", "500"],
+  variable: "--font-inter",
+});
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-syne",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,10 +27,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cn(inter.variable, syne.variable)}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
