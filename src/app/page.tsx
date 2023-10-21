@@ -5,7 +5,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { promises as fs } from "fs";
-import { Github, Mail, Twitter } from "lucide-react";
+import { Github, Mail, Sun, Twitter } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import path from "path";
@@ -112,6 +112,29 @@ export default async function Home() {
       </div>
       <hr className="my-8" />
       <div>
+        <div className="grid grid-cols-4 lg:grid-cols-6 gap-4">
+          <div className="border from-slate-500 to-slate-800 bg-gradient-to-tl rounded-3xl col-span-2 px-6 py-8 h-70 md:h-48 lg:h-36">
+            My name is Tika, I&apos;m 17 & I&apos;m from the United Kingdom – I
+            spend about half of my time on stuff no one told me to do!
+          </div>
+          <div className="border from-blue-800 to-slate-800 bg-gradient-to-r rounded-3xl col-span-2 lg:col-span-3 px-6 py-8 text-left">
+            <h1>Design Philosophy</h1>
+            <p>
+              It&apos;s all about solving problems: don&apos;t make the problem.
+              There&apos;s no need to reinvent the wheel.
+            </p>
+          </div>
+          <div className="border from-orange-400 to-yellow-200 bg-gradient-to-br rounded-3xl col-span-2 px-6 py-8 text-left flex justify-between md:col-span-1">
+            <Sun className="w-16 h-16" />
+            <p className="h-full flex items-end font-bold">-17degC</p>
+          </div>
+          <div className="h-96 col-span-2 relative rounded-3xl border px-6 py-8">
+            <h1>Recent Releases</h1>
+          </div>
+        </div>
+      </div>
+      <hr className="my-8" />
+      <div>
         <h1 className="text-3xl mb-4">Projects</h1>
         <div className="flex flex-col lg:grid lg:grid-cols-5 gap-4">
           {content.map((it, i) => (
@@ -119,9 +142,25 @@ export default async function Home() {
           ))}
         </div>
       </div>
-      <div className="bg-muted rounded-3xl py-8 px-6 text-muted-foreground mt-8">
-        <p className="text-primary text-lg mb-4">Quick links</p>
-        <TextLink url="https://github.com/tika">GitHub (@tika)</TextLink>
+
+      <div className="bg-muted rounded-3xl py-8 px-6 text-muted-foreground mt-8 flex flex-col items-center">
+        <div className="flex justify-between items-center w-full">
+          <div className="flex flex-col w-1/2">
+            <TextLink url="https://github.com/tika">GitHub (@tika)</TextLink>
+            <TextLink url="https://x.com/7ikadev">X (@7ikadev)</TextLink>
+            <TextLink url="https://linkedin.com/">
+              LinkedIn (Tika Capon)
+            </TextLink>
+          </div>
+          <div className="w-[1px] h-16 bg-white bg-opacity-10" />
+          <div className="w-1/2 h-full px-4">
+            <p>Website made on 🪐 by 7ika.</p>
+            <p>Thanks for checking out this space,</p>
+            <p className="hover:text-purple-500 transition cursor-crosshair">
+              ~ Tika
+            </p>
+          </div>
+        </div>
       </div>
     </main>
   );
