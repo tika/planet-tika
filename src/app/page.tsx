@@ -250,22 +250,26 @@ export default async function Home() {
             <div className="grid grid-cols-3 grid-rows-2 h-full gap-6">
               <GitHubBento />
               <div className="from-yellow-600 to-orange-400 bg-gradient-to-tl col-span-6 row-span-1 w-full h-full px-8 items-center justify-center rounded-3xl gap-1 text-lg flex flex-col">
-                <h1 className="flex gap-2">
-                  <Mic /> Media
-                </h1>
-                <div>
+                <div className="hidden md:block">
+                  <h1 className="flex gap-2">
+                    <Mic /> Media
+                  </h1>
+                  <div>
+                    <TextLink url="https://open.spotify.com/show/3aKp7gqsdqv9MVOqIGVc5y?si=625a092b56d14565">
+                      Charge
+                    </TextLink>
+                    <span className="ml-1">
+                      is a tech & science produced by me, co-hosted with 2
+                      friends.
+                    </span>
+                  </div>
+                </div>
+                <div className="block md:hidden text-3xl">
                   <TextLink url="https://open.spotify.com/show/3aKp7gqsdqv9MVOqIGVc5y?si=625a092b56d14565">
-                    Charge
+                    Charge Podcast
                   </TextLink>
-                  <span className="ml-1">
-                    is a tech & science produced by me, co-hosted with 2
-                    friends.
-                  </span>
                 </div>
               </div>
-              {/* <div className="from-lime-700 to-lime-900 bg-gradient-to-t col-span-1 row-span-1 w-full h-full flex items-center justify-center rounded-3xl"></div>
-              <div className="from-lime-700 to-lime-900 bg-gradient-to-t col-span-1 row-span-1 w-full h-full flex items-center justify-center rounded-3xl"></div>
-              <div className="from-lime-700 to-lime-900 bg-gradient-to-t col-span-1 row-span-1 w-full h-full flex items-center justify-center rounded-3xl"></div> */}
             </div>
           </div>
           <div className="h-96 col-span-2 relative rounded-3xl border px-6 py-4">
