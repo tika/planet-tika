@@ -197,6 +197,9 @@ export const InteractiveMarquee: React.FC<MarqueeProps> = (props) => {
       >
         <MarqueeItem speed={speedSpring}>{children}</MarqueeItem>
         <MarqueeItem speed={speedSpring}>{children}</MarqueeItem>
+        <MarqueeItem speed={speedSpring}>{children}</MarqueeItem>
+        <MarqueeItem speed={speedSpring}>{children}</MarqueeItem>
+        <MarqueeItem speed={speedSpring}>{children}</MarqueeItem>
       </motion.div>
     </>
   );

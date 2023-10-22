@@ -4,7 +4,7 @@ export function TextLink(props: { url: string; children: React.ReactNode }) {
   return (
     <NextLink
       href={props.url}
-      className="text-primary-theme cursor-pointer hover:text-purple-600 transition"
+      className="text-primary-theme cursor-pointer hover:text-blue-600 transition"
     >
       {props.children}
     </NextLink>
