@@ -169,7 +169,7 @@ export default async function Home() {
   }
 
   return (
-    <main className="px-16 py-8 md:px-32">
+    <main className="px-2 sm:px-16 py-8 md:px-32">
       <div className="flex items-center justify-between gap-2 mb-4">
         <div className="flex items-center gap-2">
           <ThemeToggle />
