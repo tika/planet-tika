@@ -4,7 +4,10 @@ import { Cloud, CloudRain, CloudSnow, Sun } from "lucide-react";
 async function getCurrentWeather(town: string) {
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=${process.env.OPEN_WEATHER_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=${process.env.OPEN_WEATHER_KEY}`,
+      {
+        cache: "reload",
+      }
     );
     const data = await response.json();
 
