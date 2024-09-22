@@ -1,4 +1,3 @@
-import { GitHubBento } from "@/components/bento/github";
 import { RecentReleases } from "@/components/bento/recent-releases";
 import { Weather } from "@/components/bento/weather";
 import { TextLink } from "@/components/link";
@@ -9,7 +8,7 @@ import { Title } from "@/components/title";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { promises as fs } from "fs";
-import { Github, Mail, Mic, Twitter } from "lucide-react";
+import { Github, Mail, Twitter } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import path from "path";
@@ -36,8 +35,7 @@ export const metadata: Metadata = {
   title: "Portfolio – Tika Capon",
   icons: "https://avatars.githubusercontent.com/u/48658947?v=4",
   keywords: [
-    "Toggle theme",
-    "Tika '23",
+    "Tika '24",
     "Avatar",
     "Tika Capon",
     "Software Engineer",
@@ -140,7 +138,7 @@ export const metadata: Metadata = {
   themeColor: "#1E3FAB",
   authors: {
     name: "Tika Capon",
-    url: "https://7ika.dev/",
+    url: "https://capon.io/",
   },
 };
 
@@ -154,8 +152,13 @@ export default async function Home() {
       withFileTypes: true,
     });
     projectNames = files.map((it) => {
-      const name = it.name.split("-");
+      let name = it.name.split("-");
       name.shift();
+
+      // Remove file extension
+      name = name.join(" ").split(".");
+      name.pop();
+
       return name.join(" ");
     });
     projectNames.push(" ");
@@ -174,7 +177,7 @@ export default async function Home() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
 
-          <p>Tika &apos;23</p>
+          <p>Tika &apos;24</p>
         </div>
 
         <div className="flex gap-2">
@@ -191,7 +194,7 @@ export default async function Home() {
             <Twitter className="h-[1.2rem] w-[1.2rem]" />
           </Link>
           <Link
-            href="mailto:hey@7ika.dev"
+            href="mailto:inquires@capon.io"
             className={cn(
               buttonVariants({
                 variant: "outline",
@@ -233,45 +236,12 @@ export default async function Home() {
       <div>
         <div className="grid grid-cols-4 lg:grid-cols-6 gap-6">
           <div className="border from-slate-500 to-slate-800 bg-gradient-to-tl rounded-3xl col-span-2 px-6 py-8 overflow-hidden text-white">
-            My name is Tika, I&apos;m 17 & I&apos;m from the United Kingdom. 4+
-            years of coding, hobbies include: media creation, startups & music!
-          </div>
-          <div className="border from-blue-800 to-slate-800 bg-gradient-to-r rounded-3xl col-span-2 lg:col-span-3 px-6 py-8 text-left text-white">
-            <h1>Design Philosophy</h1>
-            <p>
-              It&apos;s all about solving problems: don&apos;t make the problem.
-              There&apos;s no need to reinvent the wheel.
-            </p>
+            My name is Tika, I&apos;m 18 & I&apos;m from the United Kingdom. 4+
+            years of coding, hobbies include: media creation, cooking & music!
           </div>
 
           <Weather />
 
-          <div className="h-96 col-span-2 md:col-span-3">
-            <div className="grid grid-cols-3 grid-rows-2 h-full gap-6">
-              <GitHubBento />
-              <div className="from-yellow-600 to-orange-400 bg-gradient-to-tl col-span-6 row-span-1 w-full h-full px-8 items-center justify-center rounded-3xl gap-1 text-lg flex flex-col">
-                <div className="hidden md:block">
-                  <h1 className="flex gap-2">
-                    <Mic /> Media
-                  </h1>
-                  <div>
-                    <TextLink url="https://open.spotify.com/show/3aKp7gqsdqv9MVOqIGVc5y?si=625a092b56d14565">
-                      Charge
-                    </TextLink>
-                    <span className="ml-1">
-                      is a tech & science produced by me, co-hosted with 2
-                      friends.
-                    </span>
-                  </div>
-                </div>
-                <div className="block md:hidden text-3xl">
-                  <TextLink url="https://open.spotify.com/show/3aKp7gqsdqv9MVOqIGVc5y?si=625a092b56d14565">
-                    Charge Podcast
-                  </TextLink>
-                </div>
-              </div>
-            </div>
-          </div>
           <div className="h-96 col-span-2 relative rounded-3xl border px-6 py-4">
             <RecentReleases />
           </div>
@@ -312,7 +282,7 @@ export default async function Home() {
         <div className="flex justify-between items-center w-full">
           <div className="flex flex-col w-1/2">
             <TextLink url="https://github.com/tika">GitHub (@tika)</TextLink>
-            <TextLink url="https://x.com/7ikadev">X (@7ikadev)</TextLink>
+            <TextLink url="https://x.com/7ikadev">X (@iocapon)</TextLink>
             <TextLink url="https://www.linkedin.com/in/tika-capon-94193a27b/">
               LinkedIn (Tika Capon)
             </TextLink>
@@ -322,9 +292,8 @@ export default async function Home() {
           </div>
           <div className="w-[1px] h-16 bg-white bg-opacity-10" />
           <div className="w-1/2 h-full px-4">
-            <p>Website made on 🪐 by 7ika.</p>
-            <p>Thanks for checking out this space,</p>
-            <p className="hover:text-blue-500 transition">~ Tika</p>
+            <p>Website last updated 9/21/24</p>
+            <p>Built by Tika</p>
           </div>
         </div>
       </div>
