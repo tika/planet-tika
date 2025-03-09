@@ -282,7 +282,7 @@ export default async function Home() {
         <div className="flex justify-between items-center w-full">
           <div className="flex flex-col w-1/2">
             <TextLink url="https://github.com/tika">GitHub (@tika)</TextLink>
-            <TextLink url="https://x.com/7ikadev">X (@iocapon)</TextLink>
+            <TextLink url="https://x.com/iocapon">X (@iocapon)</TextLink>
             <TextLink url="https://www.linkedin.com/in/tika-capon-94193a27b/">
               LinkedIn (Tika Capon)
             </TextLink>
